@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Search for artist
+{% endblock %}
+{% block main %}
+<h1> {{ name }} </h1>
+<section>
+      <div class="container">
+        <h2>Top Tracks</h2>
+        <div class="row">
+          {% for song,art in songs.items %}
+          <div class="col-sm-2">
+            <a href="#">
+              <img src="{{ art }}" class="img-fluid">
+            </a>
+            <figcaption><strong>{{ song }}</strong></figcaption>
+          </div>
+          {% endfor %}
+        </div>
+    </div>
+    </section>
+<br>
+<br>
+    <section>
+      <div class="container">
+        <h2>Latest Album Releases</h2>
+        <div class="row">
+          {% for name,art in info.items %}
+          <div class="col-sm-2">
+              <img src="{{ art }}" class="img-fluid">
+            <figcaption><strong>{{ name }}</strong></figcaption>
+          </div>
+          {% endfor %}
+        </div>
+    </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Search for artist
+{% endblock %}
+{% block main %}
+<h3>Search Your Favourite Album<span>Preview And Vibe Out To An Album</span></h3>
+<section id="about-us" class="about-us">
+      <div class="container" data-aos="fade-up">
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h2 style="italics">{{ about.0.title }}</h2>
+              <form action="" method="POST">
+            {{ album_form.as_p }}
+            {% csrf_token %}
+            <input type="submit" name="submit" value="Submit">
+    </form>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+            <img src="{% static 'images/pic2.png' %}" style="height: 500px; width: 500px" alt="collage of dragonball images">
+          </div>
+        </div>
+
+      </div>
+    </section>
+{% endblock %}
