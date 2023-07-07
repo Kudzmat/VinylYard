@@ -12,6 +12,7 @@ CLIENT_ID = os.getenv('CLIENT_ID')
 CLIENT_SECRET = os.getenv('CLIENT_SECRET')
 SPOTIFY_REDIRECT_URI = os.getenv('SPOTIFY_REDIRECT_URI')
 SPOTIFY_USER_ID = os.getenv('SPOTIFY_USER_ID')
+PLAYLIST_ID = os.getenv('PLAYLIST_ID')
 
 SCOPE = "user-library-read user-top-read playlist-modify-public user-follow-read user-library-read " \
         "playlist-read-private playlist-modify-private "
@@ -56,7 +57,7 @@ def vibe_check(request):
                                                    username=SPOTIFY_USER_ID, redirect_uri=SPOTIFY_REDIRECT_URI))
 
     playlist_name = 'Vibe Check'
-    playlist_id = '138EKhzuYuww8DKcRC69ox'
+    playlist_id = PLAYLIST_ID
     artists_ids = []  # the recommended artist's IDs will be added to this list
     tracks = []  # the recommended tracks will be added to this list
     artist_list = request.session['artist_list']  # calling the artist list from the previous route
