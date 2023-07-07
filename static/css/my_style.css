@@ -4,8 +4,8 @@ body {
 }
 
 header {
-  background-color: #333;
-  color: #fff;
+  background-color: crimson;
+  color: crimson;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -23,8 +23,8 @@ nav li {
   margin: 0 10px;
 }
 
-nav a {
-  color: #fff;
+nav a hover:{
+  color: #7E354D;
   text-decoration: none;
 }
 
@@ -38,7 +38,7 @@ nav a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #031d42;
+  color: #7E354D;
 }
 
 .hero h2 {

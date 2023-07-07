@@ -4,10 +4,13 @@
 Search for artist
 {% endblock %}
 {% block main %}
-<section>
+<section class="container">
     <div class="row content">
         <div class="col-lg-6" data-aos="fade-right">
             <h2 style="italics">{{ album_info.0 }}</h2>
+              <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+            <img src="{{ album_cover }}" style="height: 500px; width: 500px">
+          </div>
             <p>{{ album_info.1 }}</p>
             <p>{{ album_info.2 }}</p>
           </div>
@@ -20,16 +23,16 @@ Search for artist
 </section>
 <br>
     <div class="container mt-5">
-        <h1 class="text-center mb-4">My Playlist</h1>
+        <h1 class="text-center mb-4">{{ album_info.0 }} Tracklist</h1>
 
         <!-- Song list -->
         <ul class="list-group">
             {% for song, preview in tracks.items %}
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <h2>{{ song }}</h2>
-                <button class="btn btn-sm btn-primary">
-                    <audio controls>
-                <source src="{{ preview }}" type="audio/mp3">
+                <button class="btn btn-sm btn-primary" style="color: black; background-color: #7E354D;">
+                    <audio controls style="color: #7E354D">
+                <source src="{{ preview }}" type="audio/mp3" style="color: #7E354D">
             </audio>
                     <i class="fas fa-play">Play</i>
                 </button>

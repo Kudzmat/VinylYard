@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Playlists
+{% endblock %}
+{% block main %}
+<h3>Our {{ selected_genre }} Playlists</h3>
+<br>
+    <section>
+      <div class="container">
+          <br>
+        <div class="row">
+          {% for name,info in recommendations.items %}
+          <div class="col-sm-2">
+              <h3>{{ name }}</h3>
+              <a href="{{ info.1 }}">
+                  <img src="{{ info.2 }}" class="img-fluid">
+              </a>
+            <figcaption><strong>{{ info.0 }}</strong></figcaption>
+          </div>
+          {% endfor %}
+        </div>
+    </div>
+    </section>
+{% endblock %}

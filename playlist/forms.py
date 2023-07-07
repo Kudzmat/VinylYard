@@ -33,3 +33,17 @@ class VibeCheck(forms.Form):
     class Meta:
         model = VibeCheck
         fields = "__all__"  # getting all the fields in the model
+
+
+class GenrePickForm(forms.Form):
+    genre = forms.ChoiceField(label='Genre', choices=[('', '--What You In The Mood For--'),
+                                                      ('Indie', 'Indie'),
+                                                      ('Pop', 'Pop'),
+                                                      ('Country', 'Country'),
+                                                      ('Hip-Hop', 'Hip-Hop'),
+                                                      ('Workout', 'Workout'),
+                                                      ('R&B', 'R&B'),
+                                                      ('Chill', 'Chill'),
+                                                      ('Christian & Gospel', 'Christian & Gospel'),
+                                                      ('Sleep', 'Sleep')
+                                                      ])

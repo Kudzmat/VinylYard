@@ -4,7 +4,7 @@
 Search for artist
 {% endblock %}
 {% block main %}
-<h3>Search For Your Favourite<span>Artist</span></h3>
+<h3>Search Your Favourite<span>Artist</span></h3>
 <br>
 <section id="about-us" class="about-us">
       <div class="container" data-aos="fade-up">
@@ -13,7 +13,7 @@ Search for artist
               <form action="" method="POST">
         {{ artist_form.as_p }}
         {% csrf_token %}
-        <input type="submit" name="submit" value="Submit">
+        <input type="submit" name="submit" value="Go!">
     </form>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">

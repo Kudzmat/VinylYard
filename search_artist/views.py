@@ -53,6 +53,10 @@ def artist_page(request):
     artist_followers = "{:,}".format(artist_display['followers']['total'])  # formatting for large numbers
     artist_genres = artist_display['genres']
 
+    # artist display images
+    large_image = name_result['artists']['items'][0]['images'][0]['url']
+    med_image = name_result['artists']['items'][0]['images'][1]['url']
+
     # getting top songs. We will only display the top 8 tracks on the page
     artist_info = name_result['artists']['items'][0]  # get artist ID
     artist_id = artist_info['id']
@@ -80,8 +84,8 @@ def artist_page(request):
     context = {
         'info': album_names,
         'name': artist_name,
-        'songs': top_songs
-
+        'songs': top_songs,
+        'large_image': large_image,
     }
 
     return render(request, 'search_artist/artist_page.html', context=context)

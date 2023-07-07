@@ -7,6 +7,9 @@ Search for artist
 <h1> {{ name }} </h1>
 <section>
       <div class="container">
+            <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+            <img src="{{ large_image }}" style="height: 500px; width: 500px">
+          </div>
         <h2>Top Tracks</h2>
         <div class="row">
           {% for song,art in songs.items %}

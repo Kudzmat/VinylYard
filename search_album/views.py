@@ -46,6 +46,7 @@ def album_page(request):
     results = sp.search(name, limit=1, market='US', type="album")  # taking in the album request
     album_result = results['albums']['items'][0]  # the actual album info is here
     external_link = album_result['external_urls']['spotify']
+    album_cover = results['albums']['items'][0]['images'][0]['url']  # album cover
 
     album_id = album_result['id']  # getting the album id
     artist_name = album_result['artists'][0]['name']  # the artist's name
@@ -64,7 +65,8 @@ def album_page(request):
     context = {
         'tracks': album_tracks,
         'album_info': [album_name, artist_name, release_date],
-        'album_static': [external_link, album_image]
+        'album_static': [external_link, album_image],
+        'album_cover': album_cover
 
     }
 
