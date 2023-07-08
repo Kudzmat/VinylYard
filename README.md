@@ -1,5 +1,7 @@
 # VinylYard
 
+Vinyl Yard is a Django application that allows users to interact with Spotify's API to retrieve and manipulate music data.
+
 <img width="1344" alt="Screen Shot 2023-07-07 at 11 07 33 AM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/5ec7678a-22b1-4c4a-bdf0-bee1a430bc39">
 
 
