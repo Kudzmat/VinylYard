@@ -29,20 +29,18 @@ def search_album(request):
     if request.method == 'POST':
         new_form = SearchAlbum(request.POST)
         name = request.POST.get('name')
-        request.session['name'] = name
-        return redirect('album_page')
+        return redirect('album_page', name=name)
 
     context.update({'album_form': new_form})
 
     return render(request, 'search_album/search_album.html', context=context)
 
 
-def album_page(request):
+def album_page(request, name):
     sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=SCOPE, client_id=CLIENT_ID, client_secret=CLIENT_SECRET,
                                                    username=SPOTIFY_USER_ID, redirect_uri=SPOTIFY_REDIRECT_URI))
 
     album_tracks = {}  # this dictionary will hold all the tracks names and preview urls for the album
-    name = request.session['name']
     results = sp.search(name, limit=1, market='US', type="album")  # taking in the album request
     album_result = results['albums']['items'][0]  # the actual album info is here
     external_link = album_result['external_urls']['spotify']

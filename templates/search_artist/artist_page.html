@@ -15,7 +15,7 @@ Search for artist
           {% for song,art in songs.items %}
           <div class="col-sm-2">
             <a href="#">
-              <img src="{{ art }}" class="img-fluid">
+              <img src="{{ art.0 }}" class="img-fluid">
             </a>
             <figcaption><strong>{{ song }}</strong></figcaption>
           </div>
@@ -31,7 +31,9 @@ Search for artist
         <div class="row">
           {% for name,art in info.items %}
           <div class="col-sm-2">
-              <img src="{{ art }}" class="img-fluid">
+              <a href="/album/album-page/{{ name }}">
+                  <img src="{{ art }}" class="img-fluid">
+              </a>
             <figcaption><strong>{{ name }}</strong></figcaption>
           </div>
           {% endfor %}

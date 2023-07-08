@@ -5,6 +5,6 @@ from . import views
 urlpatterns = [
 
     path('search/', views.search_album, name='search_album'),
-    path('page/', views.album_page, name='album_page')
+    path('album-page/<str:name>', views.album_page, name='album_page')
 
 ]

@@ -53,6 +53,7 @@ def artist_page(request):
     artist_followers = "{:,}".format(artist_display['followers']['total'])  # formatting for large numbers
     artist_genres = artist_display['genres']
 
+
     # artist display images
     large_image = name_result['artists']['items'][0]['images'][0]['url']
     med_image = name_result['artists']['items'][0]['images'][1]['url']
@@ -76,10 +77,10 @@ def artist_page(request):
                 album_names[album['name']] = album['images'][0]['url']
             else:
                 pass
-
     # getting top songs
     for song in top_tracks['tracks'][:5]:
-        top_songs[song['name']] = song['album']['images'][2]['url']
+        # creating a dictionary the song name as the key and a value containing a list with song art and preview url
+        top_songs[song['name']] = [song['album']['images'][2]['url'], [song['preview_url']]]
 
     context = {
         'info': album_names,
