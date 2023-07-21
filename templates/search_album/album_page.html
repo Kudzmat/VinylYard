@@ -7,18 +7,20 @@ Search for artist
 <section class="container">
     <div class="row content">
         <div class="col-lg-6" data-aos="fade-right">
-            <h2 style="italics">{{ album_info.0 }}</h2>
               <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
             <img src="{{ album_cover }}" style="height: 500px; width: 500px">
           </div>
-            <p>{{ album_info.1 }}</p>
-            <p>{{ album_info.2 }}</p>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
               <a href="{{ album_static.0 }}">
                   <img src="{{ album_static.1 }}">
               </a>
           </div>
+        <br>
+        <hr>
+          <i><h2>{{ album_info.0 }}</h2></i>
+            <i><h2>{{ album_info.1 }}</h2></i>
+            <i><h2>{{ album_info.2 }}</h2></i>
         </div>
 </section>
 <br>

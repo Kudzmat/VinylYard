@@ -7,9 +7,17 @@ Search for artist
 <h1> {{ name }} </h1>
 <section>
       <div class="container">
-            <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
-            <img src="{{ large_image }}" style="height: 500px; width: 500px">
+          <div class="row content">
+            <div class="col-lg-6" data-aos="fade-right">
+            <img src="{{ large_image }}"  class="rounded-circle" width="400px">
           </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+              <a href="{{ album_static.0 }}">
+                  <img src="{{ med_image }}" class="rounded-circle" width="120px">
+              </a>
+          </div>
+          </div>
+          <hr>
         <h2>Top Tracks</h2>
         <div class="row">
           {% for song,art in songs.items %}
@@ -27,7 +35,7 @@ Search for artist
 <br>
     <section>
       <div class="container">
-        <h2>Latest Album Releases</h2>
+        <h2>Album Releases</h2>
         <div class="row">
           {% for name,art in info.items %}
           <div class="col-sm-2">

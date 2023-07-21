@@ -87,6 +87,7 @@ def artist_page(request):
         'name': artist_name,
         'songs': top_songs,
         'large_image': large_image,
+        'med_image': med_image
     }
 
     return render(request, 'search_artist/artist_page.html', context=context)
