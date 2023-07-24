@@ -85,8 +85,13 @@ The project is split into 4 apps - home_page, search_artist, search_album, and p
 
 The playlist app also contains the genre feature, which lets a user select a genre of music from a drop-down list. The application will give the user 5 playlists to listen to full of music from the selected genre.
 
-<img width="1326" alt="Screen Shot 2023-07-23 at 8 54 07 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/41ed6c1e-425b-4db7-abba-b4ff92ea4267">
 
+  <img width="1356" alt="Screen Shot 2023-07-23 at 8 53 07 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/dcbf8e51-1c48-4b5b-9e6e-b85bc0c5ae68">
+  Do a vibe check to add new songs to your playlist...
+
+
+<img width="1326" alt="Screen Shot 2023-07-23 at 8 54 07 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/41ed6c1e-425b-4db7-abba-b4ff92ea4267">
+Or pick a genre to listen to genre-specific playlists...
 
 
 # Contributions
