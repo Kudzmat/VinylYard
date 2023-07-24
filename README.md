@@ -23,29 +23,27 @@ Vinyl Yard is a Django application that allows users to interact with Spotify's 
   -  Spotipy
   -  Django
   -  Spotify API Credentials: Obtain the client ID and client secret by creating a new app in the Spotify Developer Dashboard. Visit https://developer.spotify.com/dashboard to create a new app. https://open.spotify.com/playlist/138EKhzuYuww8DKcRC69ox?si=a47b9a69c8424cd6
-    
-<img width="1359" alt="Screen Shot 2023-07-21 at 8 06 58 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/d337a337-9b3f-4bed-8f4a-0e4068cd0e6b">
-
-
 
 # Getting Started
 
   - Clone The Repository
+    
+    ```
     $ git clone https://github.com/Kudzmat/VinylYard.git
+    ```
     
   - Install and set up Django
     https://www.djangoproject.com/download/
 
   - Install and set up spotipy
+
+    ```
     $ pip install spotipy
+    ```
     
   - Install dependencies:
     - Set up the Spotify API credentials: Open the .env file and replace CLIENT_ID, CLIENT_SECRET, SPOTIFY_REDIRECT_URI, SPOTIFY_USER_ID and PLAYLIST_ID with your actual Spotify API credentials. To find the Spotify playlist id, go to the Spotify desktop app and enter the playlist page. Click the (...) button near the play button, and click "Copy Playlist Link" under the Share menu. The playlist id is the string right after "playlist/".
 - Run the app via “python manage.py runserver” and authenticate the app to have access to your Spotify account
-
-<img width="1357" alt="Screen Shot 2023-07-21 at 8 14 05 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/4b2a8903-d1f0-40be-b44f-123c509eebc7">
-
-
 
 # Usage
 
@@ -65,11 +63,15 @@ The project is split into 4 apps - home_page, search_artist, search_album, and p
     
   - search_album: This app handles all the functionality involved in searching for an album, accessing the album information, previewing the album tracklist, and displaying everything back to the user. Enter the name of the album you are searching for and you will be taken to the results page. Select the album you are looking for from the options available.
 
-    <img width="1345" alt="Screen Shot 2023-07-24 at 4 07 55 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/f529a296-676e-44f8-bd0b-09084178f390">
-  Find the album you are looking for and select it....
+    <img width="1354" alt="Screen Shot 2023-07-24 at 2 45 16 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/176db1ff-8573-43dd-87a4-4dd586b1b726">
+  Select an album from the search results...
 
   <img width="1357" alt="Screen Shot 2023-07-24 at 2 46 42 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/526223f7-177f-468f-9a69-f5d985aa1db4">
-  Go to the album page and preview the album tracklist.
+  Go to the album page...
+
+  <img width="1356" alt="Screen Shot 2023-07-24 at 4 27 20 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/dd37184c-9334-4e05-8a1c-25c7d3d62898">
+  Listen to a song preview.
+
 
 
     
