@@ -91,7 +91,7 @@ The playlist app also contains the genre feature, which lets a user select a gen
 
 
 <img width="1326" alt="Screen Shot 2023-07-23 at 8 54 07 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/41ed6c1e-425b-4db7-abba-b4ff92ea4267">
-Or pick a genre to listen to genre-specific playlists...
+Or pick a genre to listen to genre-specific playlists.
 
 
 # Contributions
