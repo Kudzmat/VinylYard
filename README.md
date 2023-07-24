@@ -23,8 +23,9 @@ Vinyl Yard is a Django application that allows users to interact with Spotify's 
   -  Spotipy
   -  Django
   -  Spotify API Credentials: Obtain the client ID and client secret by creating a new app in the Spotify Developer Dashboard. Visit https://developer.spotify.com/dashboard to create a new app. https://open.spotify.com/playlist/138EKhzuYuww8DKcRC69ox?si=a47b9a69c8424cd6
+    
+<img width="1359" alt="Screen Shot 2023-07-21 at 8 06 58 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/d337a337-9b3f-4bed-8f4a-0e4068cd0e6b">
 
- <img width="1355" alt="Screen Shot 2023-07-07 at 6 22 48 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/77f3e785-1311-47df-a11f-f09a7dde3da8">
 
 
 # Getting Started
@@ -35,7 +36,8 @@ Vinyl Yard is a Django application that allows users to interact with Spotify's 
     - Set up the Spotify API credentials: Open the .env file and replace CLIENT_ID, CLIENT_SECRET, SPOTIFY_REDIRECT_URI, SPOTIFY_USER_ID and PLAYLIST_ID with your actual Spotify API credentials. To find the Spotify playlist id, go to the Spotify desktop app and enter the playlist page. Click the (...) button near the play button, and click "Copy Playlist Link" under the Share menu. The playlist id is the string right after "playlist/".
 - Run the app via “python manage.py runserver” and authenticate the app to have access to your Spotify account
 
-<img width="1357" alt="Screen Shot 2023-07-08 at 3 57 44 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/0c8fcaaf-fba0-4043-90f9-18eabb4b968f">
+<img width="1357" alt="Screen Shot 2023-07-21 at 8 14 05 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/4b2a8903-d1f0-40be-b44f-123c509eebc7">
+
 
 
 # Usage
