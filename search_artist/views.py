@@ -50,9 +50,6 @@ def artist_page(request):
     name_result = sp.search(name, limit=1, type='artist', market='US')  # searching for the artist
     artist_display = name_result['artists']['items'][0]
     artist_name = artist_display['name']
-    artist_followers = "{:,}".format(artist_display['followers']['total'])  # formatting for large numbers
-    artist_genres = artist_display['genres']
-
 
     # artist display images
     large_image = name_result['artists']['items'][0]['images'][0]['url']
@@ -74,7 +71,7 @@ def artist_page(request):
             break
         else:
             if album['name'] not in album_names:
-                album_names[album['name']] = album['images'][0]['url']
+                album_names[album['name']] = [album['images'][0]['url'], album['id']]
             else:
                 pass
     # getting top songs
@@ -84,10 +81,10 @@ def artist_page(request):
 
     context = {
         'info': album_names,
-        'name': artist_name,
+        'artist_name': artist_name,
         'songs': top_songs,
         'large_image': large_image,
-        'med_image': med_image
+        'med_image': med_image,
     }
 
     return render(request, 'search_artist/artist_page.html', context=context)

@@ -42,7 +42,7 @@
       <ul>
         <li><a style="color: #7E354D" href="{% url 'home' %}">Home</a></li>
         <li><a style="color: #7E354D" href="{% url 'search_artist' %}">Search Artist</a></li>
-        <li><a style="color: #7E354D" href="{% url 'search_album' %}">Search Album</a></li>
+        <li><a style="color: #7E354D" href="{% url 'search_album:search_album' %}">Search Album</a></li>
           <li><a style="color: #7E354D" href="{% url 'add_vibe' %}">Playlist Corner</a></li>
       </ul>
     </nav>
@@ -52,6 +52,7 @@
     {% endblock %}
   </main>
   <br>
+  <hr>
    <footer class="footer">
       <p>Developed By Kudzayi Bamhare 2023. &copy; 2023 Vinyl Yard. All rights reserved.</p>
   </footer>

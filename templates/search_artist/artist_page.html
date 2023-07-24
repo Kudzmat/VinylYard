@@ -4,7 +4,7 @@
 Search for artist
 {% endblock %}
 {% block main %}
-<h1> {{ name }} </h1>
+<h1> {{ artist_name }} </h1>
 <section>
       <div class="container">
           <div class="row content">
@@ -39,8 +39,8 @@ Search for artist
         <div class="row">
           {% for name,art in info.items %}
           <div class="col-sm-2">
-              <a href="/album/album-page/{{ name }}">
-                  <img src="{{ art }}" class="img-fluid">
+              <a href="{% url 'search_album:album_page' album_id=art.1 artist_name=artist_name %}"">
+                  <img src="{{ art.0 }}" class="img-fluid">
               </a>
             <figcaption><strong>{{ name }}</strong></figcaption>
           </div>

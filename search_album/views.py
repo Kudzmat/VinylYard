@@ -29,30 +29,53 @@ def search_album(request):
     if request.method == 'POST':
         new_form = SearchAlbum(request.POST)
         name = request.POST.get('name')
-        return redirect('album_page', name=name)
+        return redirect('search_album:album_results', name=name)  # redirect to results page
 
     context.update({'album_form': new_form})
 
     return render(request, 'search_album/search_album.html', context=context)
 
 
-def album_page(request, name):
+# 5 search results will be displayed to the user
+def album_results(request, name):
+    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=SCOPE, client_id=CLIENT_ID, client_secret=CLIENT_SECRET,
+                                                   username=SPOTIFY_USER_ID, redirect_uri=SPOTIFY_REDIRECT_URI))
+
+    album_list = {}  # will hold each individual album and the info I need
+
+    albums = sp.search(q=name, limit=5, type='album', market='US')
+    album2 = albums['albums']
+
+    # get artist names and album information and put them in a dictionary
+    for i in range(5):
+        artist_name = album2['items'][i]['artists'][0]['name']
+        album_name = album2['items'][i]['name']
+        album_id = album2['items'][i]['id']  # album ID is a unique album identifier so we will use it as the key
+        album_image = album2['items'][i]['images'][1]['url']
+
+        album_list[album_id] = [album_name, artist_name, album_image]
+
+    context = {'results': album_list,
+               'name': name
+               }
+
+    return render(request, 'search_album/results.html', context=context)
+
+
+# the album display page with track previews and other information
+def album_page(request, album_id, artist_name):
     sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=SCOPE, client_id=CLIENT_ID, client_secret=CLIENT_SECRET,
                                                    username=SPOTIFY_USER_ID, redirect_uri=SPOTIFY_REDIRECT_URI))
 
     album_tracks = {}  # this dictionary will hold all the tracks names and preview urls for the album
-    results = sp.search(name, limit=1, market='US', type="album")  # taking in the album request
-    album_result = results['albums']['items'][0]  # the actual album info is here
-    external_link = album_result['external_urls']['spotify']
-    album_cover = results['albums']['items'][0]['images'][0]['url']  # album cover
-
-    album_id = album_result['id']  # getting the album id
-    artist_name = album_result['artists'][0]['name']  # the artist's name
+    artist_name = artist_name  # the artist's name
 
     # this section of the code will pull out album and track info
     album_info = sp.album(album_id)  # getting album info
     album_name = album_info['name']
-    album_image = album_info['images'][1]['url']
+    album_cover = album_info['images'][0]['url']
+    album_image2 = album_info['images'][1]['url']
+    spotify_link = album_info['external_urls']['spotify']
     release_date = album_info['release_date']
     tracks = album_info['tracks']  # this section of data holds info on the actual album tracks
 
@@ -63,7 +86,7 @@ def album_page(request, name):
     context = {
         'tracks': album_tracks,
         'album_info': [album_name, artist_name, release_date],
-        'album_static': [external_link, album_image],
+        'album_static': [spotify_link, album_image2],
         'album_cover': album_cover
 
     }
