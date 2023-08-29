@@ -23,33 +23,75 @@ Vinyl Yard is a Django application that allows users to interact with Spotify's 
   -  Spotipy
   -  Django
   -  Spotify API Credentials: Obtain the client ID and client secret by creating a new app in the Spotify Developer Dashboard. Visit https://developer.spotify.com/dashboard to create a new app. https://open.spotify.com/playlist/138EKhzuYuww8DKcRC69ox?si=a47b9a69c8424cd6
-    
-<img width="1359" alt="Screen Shot 2023-07-21 at 8 06 58 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/d337a337-9b3f-4bed-8f4a-0e4068cd0e6b">
-
-
 
 # Getting Started
 
   - Clone The Repository
+    
+    ```
+    $ git clone https://github.com/Kudzmat/VinylYard.git
+    ```
+    
   - Install and set up Django
+    https://www.djangoproject.com/download/
+
+  - Install and set up spotipy
+
+    ```
+    $ pip install spotipy
+    ```
+    
   - Install dependencies:
     - Set up the Spotify API credentials: Open the .env file and replace CLIENT_ID, CLIENT_SECRET, SPOTIFY_REDIRECT_URI, SPOTIFY_USER_ID and PLAYLIST_ID with your actual Spotify API credentials. To find the Spotify playlist id, go to the Spotify desktop app and enter the playlist page. Click the (...) button near the play button, and click "Copy Playlist Link" under the Share menu. The playlist id is the string right after "playlist/".
 - Run the app via “python manage.py runserver” and authenticate the app to have access to your Spotify account
-
-<img width="1357" alt="Screen Shot 2023-07-21 at 8 14 05 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/4b2a8903-d1f0-40be-b44f-123c509eebc7">
-
-
 
 # Usage
 
 The project is split into 4 apps - home_page, search_artist, search_album, and playlist.
 
   - home_page: This app connects users to the home page of the application where the user can access the app’s various features.
-  - search_artist: This app handles all functionality involved in searching for an artist, accessing their various information, and displaying it back to the user.
-  - search_album: This app handles all the functionality involved in searching for an album, accessing the album information, previewing the album tracklist, and displaying everything back to the user.
-  - playlist: The playlist app contains all the functionality involved with playlists. It contains “Vibe Check”, where users can enter 5 artists that describe their current mood and have them added to a playlist of their choosing. It also contains the genre playlist feature, this lets a user select a genre of music from a drop-down list. The application will give the user 5 playlists to listen to full of music from the selected genre.
 
-<img width="1361" alt="Screen Shot 2023-07-07 at 6 21 07 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/bc471c45-1b45-4ac4-8a8b-963033973140">
+  - search_artist: This app handles all functionality involved in searching for an artist, accessing their various information, and displaying it back to the user. Enter an artist's name into the search bar and you will be taken to their page.
+
+    <img width="1350" alt="Screen Shot 2023-07-23 at 8 48 10 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/2fa08fd1-85f8-4b2a-9745-e500dcf1b4e6">
+    Browse the top tracks for an artist...
+
+    <img width="1361" alt="Screen Shot 2023-07-23 at 8 49 54 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/44cdf804-9604-44c4-b97d-8fa23ef85e4e">
+    Or choose from a select of their albums.
+
+
+    
+  - search_album: This app handles all the functionality involved in searching for an album, accessing the album information, previewing the album tracklist, and displaying everything back to the user. Enter the name of the album you are searching for and you will be taken to the results page. Select the album you are looking for from the options available.
+
+    <img width="1354" alt="Screen Shot 2023-07-24 at 2 45 16 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/176db1ff-8573-43dd-87a4-4dd586b1b726">
+  Select an album from the search results...
+
+  <img width="1357" alt="Screen Shot 2023-07-24 at 2 46 42 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/526223f7-177f-468f-9a69-f5d985aa1db4">
+  Go to the album page...
+
+  <img width="1356" alt="Screen Shot 2023-07-24 at 4 27 20 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/dd37184c-9334-4e05-8a1c-25c7d3d62898">
+  Listen to a song preview.
+
+
+
+    
+  - playlist: The playlist app contains all the functionality involved with playlists. It contains “Vibe Check”, where users can enter 5 artists that describe their current mood and have them added to their vibe check playlist. To make use of this feature, users must create a new playlist on their spotify account and add the playlist ID to the .env file. To find the Spotify playlist id, go to the Spotify desktop app and enter the playlist page. Click the (...) button near the play button, and click "Copy Playlist Link" under the Share menu. The playlist id is the string right after "playlist/".
+
+    <img width="1345" alt="Screen Shot 2023-07-24 at 4 07 55 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/f826a5fe-20f2-48bf-a3a2-9e8be69ad47a">
+
+    
+    
+
+
+The playlist app also contains the genre feature, which lets a user select a genre of music from a drop-down list. The application will give the user 5 playlists to listen to full of music from the selected genre.
+
+
+  <img width="1356" alt="Screen Shot 2023-07-23 at 8 53 07 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/dcbf8e51-1c48-4b5b-9e6e-b85bc0c5ae68">
+  Do a vibe check to add new songs to your playlist...
+
+
+<img width="1326" alt="Screen Shot 2023-07-23 at 8 54 07 PM" src="https://github.com/Kudzmat/VinylYard/assets/65554208/41ed6c1e-425b-4db7-abba-b4ff92ea4267">
+Or pick a genre to listen to genre-specific playlists.
 
 
 # Contributions
