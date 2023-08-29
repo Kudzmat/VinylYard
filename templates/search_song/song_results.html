@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Search Results
+{% endblock %}
+
+{% block main %}
+
+    <section>
+      <div class="container">
+        <h2>Search Results For {{ name }}</h2>
+          <br>
+        <div class="row">
+          {% for id,info in results.items %}
+          <div class="col-sm-2">
+              <a href="{% url 'search_album:album_page' album_id=id artist_name=info.0 %}">
+                  <img src="{{ info.1 }}" class="img-fluid">
+              </a>
+            <figcaption><strong>{{ info.0 }}</strong></figcaption>
+              <figcaption><i>{{ info.2 }}</i></figcaption>
+          </div>
+          {% endfor %}
+        </div>
+    </div>
+    </section>
+<br><br><br>
+
+{% endblock%}

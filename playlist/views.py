@@ -19,9 +19,6 @@ SCOPE = "user-library-read user-top-read playlist-modify-public user-follow-read
 
 
 def add_vibe(request):
-    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=SCOPE, client_id=CLIENT_ID, client_secret=CLIENT_SECRET,
-                                                   username=SPOTIFY_USER_ID, redirect_uri=SPOTIFY_REDIRECT_URI))
-
     new_form = VibeCheck()
     artist_list = []  # each artist will be appended to this list
     context = {}
@@ -56,18 +53,10 @@ def vibe_check(request):
     sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=SCOPE, client_id=CLIENT_ID, client_secret=CLIENT_SECRET,
                                                    username=SPOTIFY_USER_ID, redirect_uri=SPOTIFY_REDIRECT_URI))
 
-    playlist_name = 'Vibe Check'
     playlist_id = PLAYLIST_ID
     artists_ids = []  # the recommended artist's IDs will be added to this list
     tracks = []  # the recommended tracks will be added to this list
     artist_list = request.session['artist_list']  # calling the artist list from the previous route
-    print(artist_list)
-
-    # getting the playlist we want to add the songs to
-    playlists = sp.user_playlists(user=SPOTIFY_USER_ID)  # all playlists
-    for item in playlists['items']:
-        print(item['name'])
-        print(item['id'])
 
     # putting artist ids in a list
     for artist in artist_list:

@@ -6,6 +6,6 @@ urlpatterns = [
 
     path('search/', views.search_album, name='search_album'),
     path('album-results/<str:name>/', views.album_results, name='album_results'),
-    path('album-page/<str:album_id>-<str:artist_name>/', views.album_page, name='album_page')
+    path('album-page/<str:album_id>-<str:artist_name>/', views.album_page, name='album_page'),
 
 ]
